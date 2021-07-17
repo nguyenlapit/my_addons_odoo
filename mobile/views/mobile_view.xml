@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="mobile_menu_root" name="Quản lý điện thoại" sequence="2"/>
+    <data>
+        <!--action-->
+        <record id="mobile_view_act" model="ir.actions.act_window">
+            <field name="name">Điện thoại</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">mobile.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--tree-->
+        <record id="mobile_view_tree" model="ir.ui.view">
+            <field name="name">Điện thoại</field>
+            <field name="model">mobile.data</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="tendienthoai"/>
+                    <field name="hang_sx"/>
+                    <field name="ngay_sx"/>
+                    <field name="chieu_dai"/>
+                    <field name="chieu_rong"/>
+                    <field name="do_day"/>
+                    <field name="kich_thuoc"/>
+                    <field name="do_phan_giai"/>
+                    <field name="he_dieu_hanh"/>
+                    <field name="cpu"/>
+                    <field name="ram"/>
+                    <field name="gia_ban"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--form-->
+        <record id="mobile_view_form" model="ir.ui.view">
+            <field name="name">Điện thoại</field>
+            <field name="model">mobile.data</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="tendienthoai"/>
+                            <field name="hang_sx"/>
+                            <field name="ngay_sx"/>
+                            <field name="chieu_dai"/>
+                            <field name="chieu_rong"/>
+                            <field name="do_day"/>
+                            <field name="kich_thuoc"/>
+                            <field name="do_phan_giai"/>
+                            <field name="he_dieu_hanh"/>
+                            <field name="cpu"/>
+                            <field name="ram"/>
+                            <field name="gia_ban"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="mobile_submenu" name="Quản lý điện thoại" parent="mobile_menu_root" action="mobile_view_act" sequence="1"/>
+    </data>
+
+</odoo>

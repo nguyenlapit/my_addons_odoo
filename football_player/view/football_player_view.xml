@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, That's why It needs NO parent or action -->
+    <menuitem id="football_menu_root" name="Quản lý cầu thủ" sequence="1"/>
+
+    <data>
+
+        <!--action-->
+        <record id="football_player_act" model="ir.actions.act_window">
+            <field name="name">Quản lý cầu thủ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">football.player</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--tree-->
+        <record id="football_player_tree" model="ir.ui.view">
+            <field name="name">Quản lý cầu thủ</field>
+            <field name="model">football.player</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <!--<field name="avatar" widget="image" class="oe_avatar"/>-->
+                    <field name="name"/>
+                    <field name="birthday"/>
+                    <field name="height"/>
+                    <field name="weight"/>
+                    <field name="name_club"/>
+                    <field name="num_club"/>
+                    <field name="position"/>
+                    <field name="county_team"/>
+                    <field name="num_county"/>
+
+                </tree>
+            </field>
+        </record>
+
+        <!--form-->
+        <record id="football_player_form" model="ir.ui.view">
+            <field name="name">Quản lý cầu thủ</field>
+            <field name="model">football.player</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="avatar" widget="image" class="oe_avatar"/>
+                            <field name="name"/>
+                            <field name="birthday"/>
+                            <field name="height"/>
+                            <field name="weight"/>
+                            <field name="name_club"/>
+                            <field name="num_club"/>
+                            <field name="position"/>
+                            <field name="county_team"/>
+                            <field name="num_county"/>
+
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="football_player_submenu" name="Quản lý cầu thủ" parent="football_menu_root" action="football_player_act" sequence="1"/>
+    </data>
+</odoo>

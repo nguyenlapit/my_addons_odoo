@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+       <record id="manager_act" model="ir.actions.act_window">
+           <field name="name">Manager</field>
+           <field name="type">ir.actions.act_window</field>
+           <field name="res_model">football.manager</field>
+           <field name="view_mode">tree,form</field>
+       </record>
+
+        <!--form-->
+        <record id="manager_form" model="ir.ui.view">
+            <field name="name">Manager</field>
+            <field name="model">football.manager</field>
+            <field name="arch" type="xml">
+                <form string="">
+                    <sheet>
+                        <group>
+                            <field name="name_manager"/>
+                            <field name="age"/>
+                            <field name="county"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--tree-->
+        <record id="manager_tree" model="ir.ui.view">
+            <field name="name">Manager</field>
+            <field name="model">football.manager</field>
+            <field name="arch" type="xml">
+                <tree string="">
+                    <field name="name_manager"/>
+                    <field name="age"/>
+                    <field name="county"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="manager_menu" name="Manager" parent="football_menu_root" action="manager_act" sequence="4"/>
+    </data>
+</odoo>

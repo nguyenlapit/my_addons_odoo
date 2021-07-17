@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!--action-->
+        <record id="football_cup_act" model="ir.actions.act_window">
+            <field name="name">Giải đấu</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">football.cup</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <!--tree-->
+        <record id="football_cup_tree" model="ir.ui.view">
+            <field name="name">Giải đấu</field>
+            <field name="model">football.cup</field>
+            <field name="arch" type="xml">
+                <tree string="Giải đấu">
+                    <field name="name_cup"/>
+                    <field name="cup_note"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="football_cup_form" model="ir.ui.view">
+            <field name="name">Giải đấu</field>
+            <field name="model">football.cup</field>
+            <field name="arch" type="xml">
+                <form string="Giải đấu">
+                    <sheet>
+                        <group>
+                            <field name="name_cup"/>
+                            <field name="cup_note"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="football_cup_menu" name="Giải đấu" parent="football_menu_root" action="football_cup_act" sequence="2"/>
+    </data>
+</odoo>

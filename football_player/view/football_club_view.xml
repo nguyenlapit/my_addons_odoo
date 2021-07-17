@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <!--action-->
+        <record id="football_club_act" model="ir.actions.act_window">
+            <field name="name">Câu lạc bộ</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">football.club</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!--tree-->
+        <record id="football_club_tree" model="ir.ui.view">
+            <field name="name">Câu lạc bộ</field>
+            <field name="model">football.club</field>
+            <field name="arch" type="xml">
+                <tree string="Câu lạc bộ">
+                    <field name="nameclub"/>
+                    <!--<field name="logoclub" widget="image" class="oe_avatar"/>-->
+                    <field name="found_year"/>
+                    <field name="cup"/>
+                    <field name="county"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--form-->
+        <record id="football_club_form" model="ir.ui.view">
+            <field name="name">Câu lạc bộ</field>
+            <field name="model">football.club</field>
+            <field name="arch" type="xml">
+                <form string="Câu lạc bộ">
+                    <sheet>
+                        <group>
+                            <field name="logoclub" widget="image" class="oe_avatar"/>
+                            <field name="nameclub"/>
+                            <field name="found_year"/>
+                            <field name="cup"/>
+                            <field name="county"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="football_club_kanban" model="ir.ui.view">
+            <field name="name">Câu lạc bộ</field>
+            <field name="model">football.club</field>
+             <field name="arch" type="xml">
+                 <kanban>
+                   <field name="nameclub"/>
+                     <templates>
+                         <t t-name="kanban-box">
+                              <div t-attf-class="oe_kanban_card oe_kanban_global_click">
+                                 <div>
+                                    <div class="o_kanban_image">
+                                        <field name="logoclub" class="oe_avatar" widget="image"/>
+                                    </div>
+                                    <div class="o_kanban_record_headings">
+                                        <field name="nameclub"/>
+                                        <field name="found_year"/>
+                                        <field name="cup"/>
+                                        <field name="county"/>
+                                    </div>
+                                </div>
+                              </div>
+                         </t>
+                     </templates>
+                 </kanban>
+             </field>
+        </record>
+         <!-- This Menu Item must have a parent and an action -->
+        <menuitem id="football_club_menu" name="Câu lạc bộ" parent="football_menu_root" action="football_club_act" sequence="3"/>
+
+    </data>
+</odoo>
